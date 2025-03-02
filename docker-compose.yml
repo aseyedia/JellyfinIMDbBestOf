@@ -1,0 +1,15 @@
+name: "Jellyfin Plugin Dev"
+services:
+  jellyfin:
+    build:
+      context: .  # This tells Docker to build using the local Dockerfile
+      dockerfile: Dockerfile
+    container_name: jellyfin_plugin_dev
+    ports:
+      - "8095:8096"  # Maps port 8095 (host) to 8096 (container)
+    volumes:
+      # Mount only the media directory to avoid overwriting production configs
+      - /mnt/SSD2/JellyfinSSD2/:/media:ro
+      # Mount your plugin development repo into the Jellyfin plugins folder
+      - /home/arta/githubProjects/jellyfin_plugin_dev/JellyfinIMDbBestOf:/config/plugins/JellyfinIMDbBestOf
+    restart: unless-stopped
