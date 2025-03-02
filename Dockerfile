@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
     curl \
     unzip \
     libicu-dev \
+    git \
     && rm -rf /var/lib/apt/lists/*
 
 # Install .NET SDK

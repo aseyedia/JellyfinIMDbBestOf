@@ -12,4 +12,5 @@ services:
       - /mnt/SSD2/JellyfinSSD2/:/media:ro
       # Mount your plugin development repo into the Jellyfin plugins folder
       - /home/arta/githubProjects/jellyfin_plugin_dev/JellyfinIMDbBestOf:/config/plugins/JellyfinIMDbBestOf
+      - /home/arta/.ssh:/root/.ssh:ro
     restart: unless-stopped
